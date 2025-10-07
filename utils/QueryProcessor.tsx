@@ -15,5 +15,12 @@ export default function QueryProcessor(query: string): string {
     return "blackbird2";
   }
 
+  if (query.toLowerCase().includes("largest")) {
+    let arr = query.substring(query.indexOf(":")+1, query.indexOf("?")).split(",");
+    return Math.max(parseInt(arr[0]), Math.max(parseInt(arr[1]), parseInt(arr[2]))).toString();
+  }
+
+
+
   return "";
 }
