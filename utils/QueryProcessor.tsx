@@ -20,6 +20,10 @@ export default function QueryProcessor(query: string): string {
     return Math.max(parseInt(arr[0]), Math.max(parseInt(arr[1]), parseInt(arr[2]))).toString();
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    let arr = query.split("plus");
+    return (parseInt(arr[0]) + parseInt(arr[1])).toString();
+  }
 
 
   return "";
