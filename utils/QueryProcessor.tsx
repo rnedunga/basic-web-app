@@ -21,7 +21,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    let arr = query.split("plus");
+    let arr = query.substring(query.indexOf("s")+1, query.length).split("plus");
     return (parseInt(arr[0]) + parseInt(arr[1])).toString();
   }
 
